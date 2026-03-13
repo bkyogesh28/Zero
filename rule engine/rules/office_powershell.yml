@@ -1,0 +1,23 @@
+title: Office Spawning PowerShell
+id: office-001
+status: experimental
+description: Detect Office apps spawning PowerShell
+
+logsource:
+    product: windows
+    category: process_creation
+
+detection:
+    selection_parent:
+        ParentImage:
+            - winword.exe
+            - excel.exe
+            - outlook.exe
+    selection_child:
+        Image: powershell.exe
+    condition: selection_parent and selection_child
+
+level: high
+tags:
+    - attack.t1059
+    - attack.t1204

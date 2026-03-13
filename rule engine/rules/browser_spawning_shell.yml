@@ -1,0 +1,28 @@
+title: Browser Spawning Shell
+id: browser-001
+status: experimental
+description: Detect browsers spawning PowerShell or CMD
+
+logsource:
+  product: windows
+  category: process_creation
+
+detection:
+  selection_parent:
+    ParentImage:
+      - chrome.exe
+      - msedge.exe
+      - firefox.exe
+      - brave.exe
+
+  selection_child:
+    Image:
+      - powershell.exe
+      - cmd.exe
+
+  condition: selection_parent and selection_child
+
+level: high
+tags:
+  - attack.t1059
+  - attack.t1204

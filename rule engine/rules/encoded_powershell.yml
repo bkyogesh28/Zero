@@ -1,0 +1,23 @@
+title: Encoded PowerShell Command
+id: ps-001
+status: experimental
+description: Detect PowerShell encoded command usage
+
+logsource:
+    product: windows
+    category: process_creation
+
+detection:
+    selection_image:
+        Image: powershell.exe
+    selection_cmd:
+        CommandLine|contains:
+            - ' -enc '
+            - ' -encodedcommand '
+            - '-nop -w hidden -enc'
+            - '-Encodedcommand'
+    condition: selection_image and selection_cmd
+
+level: high
+tags:
+    - attack.t1059

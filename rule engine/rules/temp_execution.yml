@@ -1,0 +1,22 @@
+title: Executable Running From Temp
+id: temp-001
+status: experimental
+description: Detect execution from temporary or user-controlled locations
+
+logsource:
+  product: windows
+  category: process_creation
+
+detection:
+  selection_path_type:
+    PathType:
+      - temp
+      - downloads
+      - desktop
+      - user_appdata
+
+  condition: selection_path_type
+
+level: medium
+tags:
+  - attack.t1204
