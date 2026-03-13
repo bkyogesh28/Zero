@@ -77,7 +77,5 @@ Sigma Detection Engine
 Alert Generation
 
 
-# ⚠️ Disclaimer
 
-This project is a **research and learning prototype** and is **not intended for production security deployments**.
 
