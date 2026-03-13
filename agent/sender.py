@@ -1,6 +1,6 @@
 import requests
 
-URL = "http://192.168.135.130:8000/telemetry"
+URL = "http://IP:PORT/telemetry"
 
 
 def send_event(event: dict) -> None:
