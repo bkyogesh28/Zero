@@ -87,7 +87,7 @@ uvicorn server:app --host 0.0.0.0 --port PORT --reload
 3. Run the Endpoint Agent
 python monitor.py
 
-4.Test with custom payloads
+ 4.Test with custom payloads
 
 5.Check for Alerts
 curl http[:]//localhost[:]PORT/alerts
