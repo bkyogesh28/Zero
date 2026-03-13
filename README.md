@@ -77,5 +77,24 @@ Sigma Detection Engine
 Alert Generation
 
 
+# Configuration
+
+1. 
+Start PostgreSQL and create the database:
+
+2.
+Run the FastAPI server:
+uvicorn server:app --host 0.0.0.0 --port PORT --reload
+
+3.
+Run the Endpoint Agent
+python monitor.py
+
+4.
+Test with custom payloads
+
+5.
+Check for Alerts
+curl http://localhost:8000/alerts
 
 
