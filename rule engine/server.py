@@ -12,11 +12,11 @@ app = FastAPI()
 
 
 DB_CONFIG = {
-    "dbname": "logs",
-    "user": "postgres",
-    "password": "PostGres",
-    "host": "localhost",
-    "port": "5432",
+    "dbname": "DB_NAME",
+    "user": "USER_NAME",
+    "password": "creds for db",
+    "host": "IP",
+    "port": "port",
 }
 
 
