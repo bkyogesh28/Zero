@@ -65,15 +65,15 @@ Current detections include:
 # 🧱 Architecture
 
 Endpoint Agent
-↓
+->
 Telemetry Collection
-↓
+->
 FastAPI Ingestion Server
-↓
+->
 PostgreSQL Event Storage
-↓
+->
 Sigma Detection Engine
-↓
+->
 Alert Generation
 
 
