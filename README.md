@@ -1,65 +1,83 @@
-# zero-trust-endpoint-platform
-A Zero-trust model application that enforces application allowlisting, alerts about suspicious parent-child process, finding LoLBin attacks, calculates risk score, map to MITRE ATT&CK framework and give insightfull data in the dashboard
+# 🛡️ Zero Trust Endpoint Platform
 
+A **Zero Trust security prototype** that enforces application allowlisting, detects suspicious process behavior, identifies **Living-off-the-Land (LoLBin) attacks**, calculates **risk scores**, maps detections to the **MITRE ATT&CK framework**, and provides actionable security insights.
 
-Project Description
+---
 
-Zero is a prototype endpoint security platform designed to demonstrate how modern endpoint detection and response (EDR) systems collect telemetry, analyze behavior, and generate security alerts.
+# 📖 Project Overview
 
-The platform consists of a lightweight endpoint agent, a centralized telemetry server, a Sigma-based detection engine, and a PostgreSQL event store. The system collects process execution metadata from endpoints, streams telemetry to a backend API, evaluates events against behavioral detection rules, and produces alerts for suspicious activity.
+**Zero** is a prototype **Endpoint Detection Platform** designed to demonstrate how modern **Endpoint Detection and Response (EDR)** systems operate.
 
-The project focuses on behavior-based detection techniques inspired by real-world endpoint security solutions.
+The system collects telemetry from endpoints, analyzes behavioral patterns using **Sigma detection rules**, and generates alerts when suspicious activity is detected.
 
-Key Features
-Endpoint Telemetry Agent
+The project focuses on **behavior-based detection techniques** inspired by modern security products.
 
-A lightweight Python agent collects process execution data from endpoints using psutil.
+---
+
+# ⚙️ Core Components
+
+### 🖥️ Endpoint Telemetry Agent
+
+A lightweight Python agent collects process execution data using **psutil**.
 
 Captured telemetry includes:
-Process name
-Parent process
-Command line arguments
-Process hash (SHA256)
-Execution path classification
-Username
-LOLBin identification
-Timestamp
 
-Centralized Telemetry Server
+- Process name
+- Parent process
+- Command line arguments
+- Process hash (SHA256)
+- Execution path classification
+- Username
+- Living-off-the-Land binary (LoLBin) identification
+- Timestamp
 
-A FastAPI-based ingestion server receives telemetry from agents and stores events in PostgreSQL.
+---
 
-The backend provides APIs for:
-Telemetry ingestion
-Event storage
-Alert generation
-Alert retrieval
+### 🌐 Centralized Telemetry Server
 
+A **FastAPI-based ingestion server** receives telemetry from endpoint agents and stores it in **PostgreSQL**.
 
-Sigma-Based Detection Engine
+The backend exposes APIs for:
 
-The platform uses Sigma rules to detect suspicious behavior patterns.
+- Telemetry ingestion
+- Event storage
+- Alert generation
+- Alert retrieval
 
-Sigma rules allow detections to be expressed in a standardized YAML format, making the detection engine modular and extensible.
+---
+
+### 🔎 Sigma-Based Detection Engine
+
+The detection engine evaluates incoming telemetry against **Sigma rules** written in YAML format.
+
+Sigma enables **portable detection logic** across different security platforms.
 
 Current detections include:
-Office spawning PowerShell
-Encoded PowerShell execution
-Browser spawning shell interpreters
-Execution from temporary directories
-Living-Off-The-Land binary (LOLBin) execution
 
+- 📄 Office spawning PowerShell
+- 🧬 Encoded PowerShell execution
+- 🌐 Browser spawning shell interpreters
+- 📂 Execution from temporary directories
+- ⚔️ Living-off-the-Land binary (LoLBin) execution
 
-Architecture
+---
+
+# 🧱 Architecture
 
 Endpoint Agent
-     ↓
+↓
 Telemetry Collection
-     ↓
+↓
 FastAPI Ingestion Server
-     ↓
+↓
 PostgreSQL Event Storage
-     ↓
+↓
 Sigma Detection Engine
-     ↓
+↓
 Alert Generation
+
+
+# ⚠️ Disclaimer
+
+This project is a **research and learning prototype** and is **not intended for production security deployments**.
+
