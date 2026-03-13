@@ -95,6 +95,6 @@ Test with custom payloads
 
 5.
 Check for Alerts
-curl http://localhost:8000/alerts
+curl http[:]//localhost[:]PORT/alerts
 
 
