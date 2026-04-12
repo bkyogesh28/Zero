@@ -6,7 +6,7 @@ A **Zero Trust security prototype** that enforces application allowlisting, dete
 
 # 📖 Project Overview
 
-**Zero** is a prototype **Endpoint Detection Platform** designed to demonstrate how modern **Endpoint Detection and Response (EDR)** systems operate.
+**TrustME** is a prototype **Endpoint Detection Platform** designed to demonstrate how modern **Endpoint Detection and Response (EDR)** systems operate.
 
 The system collects telemetry from endpoints, analyzes behavioral patterns using **Sigma detection rules**, and generates alerts when suspicious activity is detected.
 
